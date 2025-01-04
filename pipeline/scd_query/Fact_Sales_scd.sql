@@ -11,10 +11,10 @@ USING (
         iv.UnitPrice AS unit_price,
         iv.Quantity,
         CURRENT_DATE() AS start_date
-    FROM `final-dwh.chinook_olap.customer` c
-    JOIN `final-dwh.chinook_olap.invoice` i ON c.CustomerId = i.CustomerId
-    JOIN `final-dwh.chinook_olap.invoiceLine` iv ON iv.InvoiceId = i.InvoiceId
-    JOIN `final-dwh.chinook_olap.track` t ON t.TrackId = iv.TrackId
+    FROM `final-dwh.chinook_stagging.customer` c
+    JOIN `final-dwh.chinook_stagging.invoice` i ON c.CustomerId = i.CustomerId
+    JOIN `final-dwh.chinook_stagging.invoiceLine` iv ON iv.InvoiceId = i.InvoiceId
+    JOIN `final-dwh.chinook_stagging.track` t ON t.TrackId = iv.TrackId
 ) S
 ON T.dim_sale_id = S.dim_sale_id AND T.is_current = TRUE
 
@@ -34,10 +34,10 @@ USING (
         iv.UnitPrice AS unit_price,
         iv.Quantity,
         CURRENT_DATE() AS start_date
-    FROM `final-dwh.chinook_olap.customer1` c
-    JOIN `final-dwh.chinook_olap.invoice` i ON c.CustomerId = i.CustomerId
-    JOIN `final-dwh.chinook_olap.invoiceLine` iv ON iv.InvoiceId = i.InvoiceId
-    JOIN `final-dwh.chinook_olap.track` t ON t.TrackId = iv.TrackId
+    FROM `final-dwh.chinook_stagging.customer` c
+    JOIN `final-dwh.chinook_stagging.invoice` i ON c.CustomerId = i.CustomerId
+    JOIN `final-dwh.chinook_stagging.invoiceLine` iv ON iv.InvoiceId = i.InvoiceId
+    JOIN `final-dwh.chinook_stagging.track` t ON t.TrackId = iv.TrackId
 ) S
 ON T.dim_sale_id = S.dim_sale_id AND T.is_current = TRUE
 
@@ -61,10 +61,10 @@ MERGE `final-dwh.chinook_olap.fact_sales` T
 USING (
     SELECT 
         iv.InvoiceLineId AS dim_sale_id
-    FROM `final-dwh.chinook_olap.customer1` c
-    JOIN `final-dwh.chinook_olap.invoice` i ON c.CustomerId = i.CustomerId
-    JOIN `final-dwh.chinook_olap.invoiceLine` iv ON iv.InvoiceId = i.InvoiceId
-    JOIN `final-dwh.chinook_olap.track` t ON t.TrackId = iv.TrackId
+    FROM `final-dwh.chinook_stagging.customer` c
+    JOIN `final-dwh.chinook_stagging.invoice` i ON c.CustomerId = i.CustomerId
+    JOIN `final-dwh.chinook_stagging.invoiceLine` iv ON iv.InvoiceId = i.InvoiceId
+    JOIN `final-dwh.chinook_stagging.track` t ON t.TrackId = iv.TrackId
 ) S
 ON T.dim_sale_id = S.dim_sale_id AND T.is_current = TRUE
 

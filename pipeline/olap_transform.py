@@ -66,43 +66,12 @@ with DAG('ChinookOLAP', schedule_interval=timedelta(days=1), default_args=defaul
         )
 
 # view data in fact
-    # check_fact_sales = BigQueryCheckOperator(
-    #     task_id = 'check_fact_sales',
-    #     use_legacy_sql=False,
-    #     location = LOCATION,
-    #     sql = f'SELECT count(*) FROM `{PROJECT_ID}.{DATASET}.fact_sales`'
-    #     ) 
-    
-# create csd to update and insert new data
-    update_D_Table = DummyOperator(
-        task_id = 'update_D_Table',
-        dag = dag
-        )
-
-    scd1_update_dim_location = BigQueryOperator(
-        task_id='scd1_update_dim_location',
+    check_fact_sales = BigQueryCheckOperator(
+        task_id = 'check_fact_sales',
         use_legacy_sql=False,
-        location=LOCATION,
-        sql='./scd_query/Dim_Location_scd.sql'  
-    )
-    scd1_update_dim_time = BigQueryOperator(
-        task_id='scd1_update_dim_time',
-        use_legacy_sql=False,
-        location=LOCATION,
-        sql='./scd_query/Dim_Time_scd.sql'
-    )
-    scd1_update_dim_track = BigQueryOperator(
-        task_id='scd1_update_dim_track',
-        use_legacy_sql=False,
-        location=LOCATION,
-        sql='./scd_query/Dim_Track_scd.sql'  
-    )
-    scd2_update_fact_sales = BigQueryOperator(
-        task_id='scd2_update_fact_sales',
-        use_legacy_sql=False,
-        location=LOCATION,
-        sql='./scd_query/Fact_Sales_scd.sql'  
-    )
+        location = LOCATION,
+        sql = f'SELECT count(*) FROM `{PROJECT_ID}.{DATASET}.fact_sales`'
+        ) 
 
     finish_pipeline = DummyOperator(
         task_id = 'finish_pipeline',
@@ -114,8 +83,6 @@ create_D_Table >> [create_dim_location, create_dim_track, create_dim_time]
 
 [create_dim_location, create_dim_track, create_dim_time] >> create_fact_sales
 
-create_fact_sales >> update_D_Table
+create_fact_sales >> check_fact_sales
 
-update_D_Table >> [scd1_update_dim_location, scd1_update_dim_time, scd1_update_dim_track]
-
-[scd1_update_dim_location, scd1_update_dim_time, scd1_update_dim_track] >> scd2_update_fact_sales >> finish_pipeline
+check_fact_sales >> finish_pipeline
