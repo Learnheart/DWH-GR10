@@ -1,0 +1,258 @@
+Name,GenreId
+Rock,1
+Jazz,2
+Metal,3
+Alternative & Punk,4
+Rock And Roll,5
+Blues,6
+Latin,7
+Reggae,8
+Pop,9
+Soundtrack,10
+Bossa Nova,11
+Easy Listening,12
+Heavy Metal,13
+R&B/Soul,14
+Electronica/Dance,15
+World,16
+Hip Hop/Rap,17
+Science Fiction,18
+TV Shows,19
+Sci Fi & Fantasy,20
+Drama,21
+Comedy,22
+Alternative,23
+Classical,24
+Opera,25
+Alternative Rock,26
+College Rock,27
+Experimental Rock,28
+Goth Rock,29
+Grunge,30
+Hardcore Punk,31
+Hard Rock,32
+Indie Rock,33
+New Wave,34
+Progressive Rock,35
+Punk,36
+Shoegaze,37
+Steampunk,38
+Anime,39
+Acoustic Blues,40
+Chicago Blues,41
+Classic Blues,42
+Contemporary Blues,43
+Country Blues,44
+Delta Blues,45
+Electric Blues,46
+Children’s Music,47
+Lullabies,48
+Sing-Along,49
+Stories,50
+Avant-Garde,51
+Baroque,52
+Chamber Music,53
+Chant,54
+Choral,55
+Classical Crossover,56
+Early Music,57
+High Classical,58
+Impressionist,59
+Medieval,60
+Minimalism,61
+Modern Composition,62
+Orchestral,63
+Renaissance,64
+Romantic,65
+Wedding Music,66
+Novelty,67
+Country,68
+Alternative Country,69
+Americana,70
+Bluegrass,71
+Contemporary Bluegrass,72
+Contemporary Country,73
+Country Gospel,74
+Honky Tonk,75
+Outlaw Country,76
+Traditional Bluegrass,77
+Traditional Country,78
+Urban Cowboy,79
+Dance / EMD,80
+Breakbeat,81
+Dubstep,82
+Exercise,83
+Garage,84
+Hardcore,85
+Hard Dance,86
+Hi-NRG / Eurodance,87
+House,88
+Jackin House,89
+Jungle/Drum’n'bass,90
+Techno,91
+Trance,92
+Disney,93
+Bop,94
+Lounge,95
+Swing,96
+Electronic,97
+Ambient,98
+Crunk,99
+Downtempo,100
+Electro,101
+Electronica,102
+Electronic Rock,103
+IDM/Experimental,104
+Industrial,105
+Enka,106
+French Pop,107
+German Folk,108
+German Pop,109
+Fitness & Workout,110
+Hip-Hop/Rap,111
+Alternative Rap,112
+Bounce,113
+Dirty South,114
+East Coast Rap,115
+Gangsta Rap,116
+Hardcore Rap,117
+Hip-Hop,118
+Latin Rap,119
+Old School Rap,120
+Rap,121
+Underground Rap,122
+West Coast Rap,123
+Holiday,124
+Chanukah,125
+Christmas,126
+Christmas: Children’s,127
+Christmas: Classic,128
+Christmas: Classical,129
+Christmas: Jazz,130
+Christmas: Modern,131
+Christmas: Pop,132
+Christmas: R&B,133
+Christmas: Religious,134
+Christmas: Rock,135
+Easter,136
+Halloween,137
+Holiday: Other,138
+Thanksgiving,139
+Indie Pop,140
+Inspirational – Christian & Gospel,141
+CCM,142
+Christian Metal,143
+Christian Pop,144
+Christian Rap,145
+Christian Rock,146
+Classic Christian,147
+Contemporary Gospel,148
+Gospel,149
+Christian & Gospel,150
+Praise & Worship,151
+Qawwali,152
+Southern Gospel,153
+Traditional Gospel,154
+Instrumental,155
+March (Marching Band),156
+J-Pop,157
+J-Rock,158
+J-Synth,159
+J-Ska,160
+J-Punk,161
+Acid Jazz (with thx to Hunter,162
+Nelson),163
+Avant-Garde Jazz,164
+Big Band,165
+Blue Note,166
+Contemporary Jazz,167
+Cool,168
+Crossover Jazz,169
+Dixieland,170
+Ethio-jazz,171
+Fusion,172
+Hard Bop,173
+Latin Jazz,174
+Mainstream Jazz,175
+Ragtime,176
+Smooth Jazz,177
+Trad Jazz,178
+K-Pop,179
+Karaoke,180
+Kayokyoku,181
+Latino,182
+Alternativo & Rock Latino,183
+Baladas y Boleros,184
+Brazilian,185
+Contemporary Latin,186
+Pop Latino,187
+Raíces,188
+Reggaeton y Hip-Hop,189
+Regional Mexicano,190
+Salsa y Tropical,191
+New Age,192
+Environmental,193
+Healing,194
+Meditation,195
+Nature,196
+Relaxation,197
+Travel,198
+Adult Contemporary,199
+Britpop,200
+Pop/Rock,201
+Soft Rock,202
+Teen Pop,203
+Contemporary R&B,204
+Disco,205
+Doo Wop,206
+Funk,207
+Motown,208
+Neo-Soul,209
+Quiet Storm,210
+Soul,211
+Dancehall,212
+Dub,213
+Roots Reggae,214
+Ska,215
+Adult Alternative,216
+American Trad Rock,217
+Arena Rock,218
+Blues-Rock,219
+British Invasion,220
+Death Metal/Black Metal,221
+Glam Rock,222
+Hair Metal,223
+Jam Bands,224
+Prog-Rock/Art Rock,225
+Psychedelic,226
+Rock & Roll,227
+Rockabilly,228
+Roots Rock,229
+Singer/Songwriter,230
+Southern Rock,231
+Surf,232
+Tex-Mex,233
+Alternative Folk,234
+Contemporary Folk,235
+Contemporary Singer/Songwriter,236
+Folk-Rock,237
+New Acoustic,238
+Traditional Folk,239
+Foreign Cinema,240
+Musicals,241
+Original Score,242
+TV Soundtrack,243
+Spoken Word,244
+Tex-Mex / Tejano,245
+Chicano,246
+Classic,247
+Conjunto,248
+Conjunto Progressive,249
+New Mex,250
+Vocal,251
+Barbershop,252
+Doo-wop,253
+Standards,254
+Traditional Pop,255
+Vocal Jazz,256
+Vocal Pop,257
