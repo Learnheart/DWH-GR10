@@ -1,15 +1,14 @@
-
 CREATE OR REPLACE TABLE `final-dwh.chinook_olap.fact_sales` AS
 SELECT 
-    ROW_NUMBER() OVER() AS dim_change_id,  
-    iv.InvoiceLineId AS dim_sale_id,
+    ROW_NUMBER() OVER() AS fact_change_id,  
+    iv.InvoiceLineId AS fact_sale_id,
     i.InvoiceId AS dim_date_id,
     c.CustomerId AS dim_location_id,
     t.TrackId AS dim_track_id,
     iv.UnitPrice AS unit_price,
     iv.Quantity AS quantity,
     CURRENT_DATE() AS start_date, 
-    NULL AS end_date,                      
+    CAST(NULL AS DATE) AS end_date,                       
     TRUE AS is_current                  
 FROM 
     `final-dwh.chinook_stagging.customer` c
@@ -22,6 +21,7 @@ JOIN
 JOIN 
     `final-dwh.chinook_stagging.track` t 
     ON t.TrackId = iv.TrackId;
+
 
 
 -- CREATE OR REPLACE TABLE `final-dwh.chinook_olap.fact_sales` (

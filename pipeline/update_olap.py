@@ -35,25 +35,25 @@ with DAG('ChinookOLAP_Updated', schedule_interval=timedelta(days=1), default_arg
         dag = dag
         )
 
-    scd1_update_dim_location = BigQueryInsertJobOperator(
+    scd1_update_dim_location = BigQueryOperator(
         task_id='scd1_update_dim_location',
         use_legacy_sql=False,
         location=LOCATION,
         sql='./scd_query/Dim_Location_scd.sql'  
     )
-    scd1_update_dim_time = BigQueryInsertJobOperator(
+    scd1_update_dim_time = BigQueryOperator(
         task_id='scd1_update_dim_time',
         use_legacy_sql=False,
         location=LOCATION,
         sql='./scd_query/Dim_Time_scd.sql'
     )
-    scd1_update_dim_track = BigQueryInsertJobOperator(
+    scd1_update_dim_track = BigQueryOperator(
         task_id='scd1_update_dim_track',
         use_legacy_sql=False,
         location=LOCATION,
         sql='./scd_query/Dim_Track_scd.sql'  
     )
-    scd2_update_fact_sales = BigQueryInsertJobOperator(
+    scd2_update_fact_sales = BigQueryOperator(
         task_id='scd2_update_fact_sales',
         use_legacy_sql=False,
         location=LOCATION,
