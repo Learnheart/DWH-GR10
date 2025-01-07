@@ -1,13 +1,11 @@
 from datetime import timedelta, datetime
-
-
 from airflow import DAG 
 from airflow.utils.dates import days_ago
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.providers.google.cloud.transfers.gcs_to_bigquery import GCSToBigQueryOperator
 from airflow.providers.google.cloud.operators.bigquery import BigQueryCheckOperator
 from airflow.contrib.operators.bigquery_operator import BigQueryOperator
-
+from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobOperator, BigQueryCheckOperator
 
 
 GOOGLE_CONN_ID = "google_cloud_default"
@@ -85,4 +83,6 @@ create_D_Table >> [create_dim_location, create_dim_track, create_dim_time]
 
 [create_dim_location, create_dim_track, create_dim_time] >> create_fact_sales
 
-create_fact_sales >> check_fact_sales >> finish_pipeline
+create_fact_sales >> check_fact_sales
+
+check_fact_sales >> finish_pipeline

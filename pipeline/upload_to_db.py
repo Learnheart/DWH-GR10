@@ -308,11 +308,6 @@ with DAG('csv_to_oltp', schedule_interval=timedelta(days=1), default_args=defaul
         location = LOCATION,
         sql = f'SELECT count(*) FROM `{PROJECT_ID}.{STAGING_DATASET}.invoiceLine`'
         ) 
-
-    create_D_Table = DummyOperator(
-        task_id = 'Create_D_Table',
-        dag = dag
-        )
     finish_pipeline = DummyOperator(
         task_id = 'finish_pipeline',
         dag = dag
