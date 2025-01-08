@@ -1,6 +1,6 @@
 -- scd type 2
 
--- insert
+-- change status
 MERGE `final-dwh.chinook_olap.fact_sales` T
 USING (
     SELECT 
@@ -22,7 +22,13 @@ ON T.fact_sale_id = S.fact_sale_id AND T.is_current = TRUE
 WHEN MATCHED AND T.unit_price != S.unit_price THEN
     UPDATE SET 
         end_date = CURRENT_DATE(),
-        is_current = FALSE;
+        is_current = FALSE
+
+-- overwrite if other values have changed
+WHEN MATCHED AND T.Quantity != S.Quantity THEN
+    UPDATE SET 
+        Quantity = S.Quantity;
+
 -- update data
 MERGE `final-dwh.chinook_olap.fact_sales` T
 USING (
