@@ -22,18 +22,13 @@ ON T.fact_sale_id = S.fact_sale_id AND T.is_current = TRUE
 WHEN MATCHED AND T.unit_price != S.unit_price THEN
     UPDATE SET 
         end_date = CURRENT_DATE(),
-        is_current = FALSE;
+        is_current = FALSE
+
 -- overwrite if other values have changed
-WHEN MATCHED AND (
-    T.fact_sale_id != S.fact_sale_id OR
-    T.unit_price != S.unit_price OR
-    T.Quantity != S.Quantity OR
-) THEN
+WHEN MATCHED AND T.Quantity != S.Quantity THEN
     UPDATE SET 
-        fact_sale_id = S.fact_sale_id,
-        unit_price = S.unit_price,
-        Quantity = S.Quantity
-        
+        Quantity = S.Quantity;
+
 -- update data
 MERGE `final-dwh.chinook_olap.fact_sales` T
 USING (
